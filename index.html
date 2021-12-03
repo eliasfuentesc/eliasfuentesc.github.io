@@ -11,6 +11,22 @@
         rel="stylesheet">
     <title>elias fuentes | site in construction</title>
     <style>
+        .noselect {
+            -webkit-touch-callout: none;
+            /* iOS Safari */
+            -webkit-user-select: none;
+            /* Safari */
+            -khtml-user-select: none;
+            /* Konqueror HTML */
+            -moz-user-select: none;
+            /* Old versions of Firefox */
+            -ms-user-select: none;
+            /* Internet Explorer/Edge */
+            user-select: none;
+            /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+        }
+
         body {
             font-family: 'Source Sans Pro', 'Segoe UI', Tahoma, sans-serif;
         }
@@ -23,9 +39,7 @@
             height: 90vh;
         }
 
-        .box {
-
-        }
+        .box {}
 
         footer {
             position: fixed;
@@ -39,9 +53,10 @@
     </style>
 </head>
 
-<body style="background-color: black; color: white;">
+<body class="noselect" style="background-color: black; color: white;">
     <div class="container">
-        <svg class="box" width="10vw" style="margin-left: -10px;" viewBox="0 0 273 287" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg class="box" width="10vw" style="margin-left: -10px;" viewBox="0 0 273 287" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
             <path
                 d="M128.782 17.711L229.226 0L241.288 68.4102L222.467 71.729C189.767 77.495 166.545 76.3039 152.792 68.153C141.53 61.4328 134.239 48.6584 130.92 29.8368L128.782 17.711ZM168.937 246.501C164.534 221.526 176.023 202.024 203.406 187.987C213.908 182.655 227.907 178.442 245.404 175.357L259.702 172.836L272.658 246.314L172.033 264.056L168.937 246.501ZM0.105347 40.3998L97.4726 23.2315L114.96 122.409L187.533 109.612L195.862 156.848L123.289 169.644L140.84 269.183L43.4731 286.352L0.105347 40.3998Z"
                 fill="white" />
