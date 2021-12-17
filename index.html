@@ -11,62 +11,148 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700;900&display=swap"
         rel="stylesheet">
-    <title>elias fuentes | coming soon</title>
+    <title>elias fuentes | studios, design, productions</title>
     <style>
         .noselect {
             -webkit-touch-callout: none;
-            /* iOS Safari */
             -webkit-user-select: none;
-            /* Safari */
             -khtml-user-select: none;
-            /* Konqueror HTML */
             -moz-user-select: none;
-            /* Old versions of Firefox */
             -ms-user-select: none;
-            /* Internet Explorer/Edge */
             user-select: none;
-            /* Non-prefixed version, currently
-                                  supported by Chrome, Edge, Opera and Firefox */
         }
 
         body {
             font-family: 'Source Sans Pro', 'Segoe UI', Tahoma, sans-serif;
+            transition-duration: 0.3s;
+        }
+
+        h1 {
+            font-size: 36pt;
+            line-height: 37pt;
+        }
+
+        button {
+            height: 24pt;
+            border: 2pt solid white;
+            border-radius: 5px;
+            color: white;
+            background-color: transparent;
+            font-family: 'Source Sans Pro', 'Segoe UI', Tahoma, sans-serif;
+            font-weight: 600;
+            font-size: large;
+            padding-bottom: 3pt;
+            height: 36px;
+            width: 200px;
+            transition-duration: 0.2s;
+            cursor: pointer;
+        }
+
+        button:hover {
+            color: black;
+            background-color: white;
+        }
+
+        button:active {
+            color: white;
+            background-color: black;
         }
 
         .container {
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: center;
+            align-items: left;
             height: 90vh;
+            margin: 24px;
         }
 
         .box {}
 
+        #mainLogo {
+                width: 34pt;
+                min-height: 34pt;
+                margin-left: -5px;
+                margin-bottom: -20pt;
+            }
+
         footer {
+            display: flex;
+            flex-direction: column;
+            justify-content: baseline;
             position: fixed;
+            bottom: 0;
             left: 0;
-            bottom: 5%;
+            padding-bottom: 10pt;
+            padding-top: 10pt;
             width: 100%;
             font-family: 'Source Sans Pro', 'Segoe UI', Tahoma, sans-serif;
             font-size: medium;
             text-align: center;
+            line-height: 8px;
+            background-image: linear-gradient(to bottom, transparent 0%, black 40%);
+        }
+
+        footer p, a {
+            color: white;
+            margin: 10px 0;
+        }
+        
+        footer a {
+            text-decoration: none;
+            transition-duration: 0.3s;
+        }
+
+        footer a:hover {
+            color: white;
+            text-decoration: underline;
+            text-underline-position: 25px;
+        }
+
+        footer a:active {
+            text-decoration: none;
+            border: none;
+        }
+
+        @media screen and (min-width:900px){
+            body {
+                margin: 0 8vw;
+            }
+            h1 {
+            font-size: 48pt;
+            line-height: 49pt;}
+            #mainLogo {
+                width: 42pt;
+                margin-bottom: -32pt;
+            }
+            footer {
+                flex-direction: row;
+                justify-content: space-around;
+            }
+            #nailFooter{order: 0;}
+            #copyrightFooter {order: -2;}
+            #lovefromFooter {order: -1;}      
         }
     </style>
 </head>
 
-<body class="noselect" style="background-color: black; color: white; min-width: 250px;">
+<body style="background-color: black; color: white; min-width: 250px; min-height: 500px;">
     <div class="container">
-        <svg class="box" width="10vw" style="margin-left: -10px; min-width: 100px;" viewBox="0 0 273 287" fill="none"
+        <svg id="mainLogo" class="box noselect" width="34pt" viewBox="0 0 273 287" fill="none"
             xmlns="http://www.w3.org/2000/svg">
             <path
                 d="M128.782 17.711L229.226 0L241.288 68.4102L222.467 71.729C189.767 77.495 166.545 76.3039 152.792 68.153C141.53 61.4328 134.239 48.6584 130.92 29.8368L128.782 17.711ZM168.937 246.501C164.534 221.526 176.023 202.024 203.406 187.987C213.908 182.655 227.907 178.442 245.404 175.357L259.702 172.836L272.658 246.314L172.033 264.056L168.937 246.501ZM0.105347 40.3998L97.4726 23.2315L114.96 122.409L187.533 109.612L195.862 156.848L123.289 169.644L140.84 269.183L43.4731 286.352L0.105347 40.3998Z"
                 fill="white" />
         </svg>
-        <h2 class="box">coming soon</h2>
+        <h1 class="box noselect">studios<br>design<br>productions</h1>
+        <a href="mailto:elias@eliasfuentes.com"><button class="noselect">contact me</button></a>
     </div>
 
-    <footer>Copyright © 2021 Elias Fuentes.</footer>
+    <footer>
+        <a id="mailFooter" href="mailto:elias@eliasfuentes.com">elias@eliasfuentes.com</a>
+        <p id="copyrightFooter" class="noselect">Copyright © 2021 Elias Fuentes.</p>
+        <p id="lovefromFooter" class="noselect" style="font-weight: 600;">❤ from Chile</p>
+    </footer>
 </body>
 
 </html>
