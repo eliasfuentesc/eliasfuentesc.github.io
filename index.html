@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>elias fuentes | studios, design, productions</title>
-    <meta name="description" content="Graphic design and promotional assets for artists: Lyric videos, Pre-save campaigns, Social media assets and more.">
+    <meta name="description"
+        content="Graphic design and promotional assets for artists: Lyric videos, Pre-save campaigns, Social media assets and more.">
     <meta name="keywords" content="graphic,design,promo,release,artists,album,presave,campaign">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
@@ -14,6 +15,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700;900&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons&amp;display=block">
     <style>
         .noselect {
             -webkit-touch-callout: none;
@@ -24,18 +26,40 @@
             user-select: none;
         }
 
+        .material-icons {
+            vertical-align: -35%;
+            font-size: 20pt;
+        }
+
         body {
+            min-height: 400px;
+            max-width: 1280px;
+            margin: 0;
             font-family: 'Source Sans Pro', 'Segoe UI', Tahoma, sans-serif;
             transition-duration: 0.3s;
+        }
+
+        header {
+            display: flex;
+            min-height: 100px;
+            height: 15vh;
+            padding: 0px 36px;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
         }
 
         h1 {
             font-size: 36pt;
             line-height: 37pt;
+            /* transition-duration: 0.3s; */
         }
 
+        /* h1:hover {
+            text-shadow: 0px 4px #ffffff2a;
+        } */
+
         button {
-            height: 24pt;
             border: 2pt solid white;
             border-radius: 5px;
             color: white;
@@ -44,7 +68,7 @@
             font-weight: 600;
             font-size: large;
             padding-bottom: 3pt;
-            height: 36px;
+            height: 42px;
             width: 200px;
             transition-duration: 0.2s;
             cursor: pointer;
@@ -57,34 +81,142 @@
 
         button:active {
             color: white;
-            background-color: black;
+            background-color: transparent;
+        }
+
+        .hamburger-button {
+            /* display: none; */
+            height: 48px;
+            width: 48px;
+            background-color: transparent;
+            color: white;
+            border-radius: 5px;
+            text-align: center;
+            transition-duration: 0.2s;
+            cursor: pointer;
+            z-index: 100;
+        }
+
+        .hamburger-button:hover {
+            background-color: white;
+            color: black;
+
+        }
+
+        .hamburger-button:active {
+            background-color: transparent;
+            color: white;
+        }
+
+        .hamburger-menu {
+            display: flex;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 3;
+            width: 100%;
+            height: 320px;
+            background-color: #FF0036;
+            box-shadow: 0px 5px 35px #00000070;
+            align-items: stretch;
+            justify-content: space-evenly;
+            flex-direction: column;
+            transform: translate(0px, -80px);
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.2s;
+        }
+
+        .hamburger-menu ul li {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .hamburger-menu ul li a {
+            text-decoration: none;
+            text-transform: lowercase;
+            outline: 0;
+            color: white;
+            font-weight:700;
+            font-size: 24px;
+            margin: 5px 0px;
+            padding: 15px 0px;
+            display: inline-block;
+        }
+
+        .hamburger-menu ul li a::after {
+            content: "";
+            width: 0px;
+            height: 2px;
+            display: block;
+            background-color: white;
+            transition-duration: 0.3s;
+        }
+
+        .hamburger-menu ul li a:hover::after {
+            width: 50px;
+        }
+
+        .hamburger-menu ul li a:active::after {
+            width: 100px;
+        }
+
+        .hamburger-menu.show {
+            visibility: visible;
+            opacity: 1;
+            transform: translate(0px, 0px);
         }
 
         .container {
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: left;
-            height: 90vh;
-            margin: 24px;
+            align-items: flex-start;
+            /* height: 85vh; */
+            min-height: 400px;
+            margin: 0px 0px 24px 0px;
+            /* background-color: #FF0036; */
         }
 
-        .box {}
+        .headline-container {
+            margin: 0;
+            padding: 0px 36px;
+        }
+
+        .box {transition-duration: 0.3s;}
 
         #mainLogo {
-                width: 34pt;
-                min-height: 34pt;
-                margin-left: -5px;
-                margin-bottom: -20pt;
-            }
+            width: 34pt;
+            min-height: 34pt;
+        }
+
+        .box:hover {
+            /* filter: drop-shadow(3px 3px #FF0036); */
+            transform: scale(105%);
+        }
+
+        .box:active {
+            filter: drop-shadow(3px 3px 0px red);
+            transform: scale(100%);
+        }
+
+        .player-container {
+            width: 100%;
+            min-width: 320px;
+            height: 300px;
+            /* background-color: rgb(53, 53, 53); */
+            background-image: url(./img/ELIAS_LANDINGPIC.jpg);
+            background-size: cover;
+            background-position:center;
+            transition-duration: 0.3s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
         footer {
             display: flex;
             flex-direction: column;
             justify-content: baseline;
-            position: fixed;
-            bottom: 0;
-            left: 0;
             padding-bottom: 10pt;
             padding-top: 10pt;
             width: 100%;
@@ -95,11 +227,12 @@
             background-image: linear-gradient(to bottom, transparent 0%, black 40%);
         }
 
-        footer p, a {
+        footer p,
+        a {
             color: white;
             margin: 10px 0;
         }
-        
+
         footer a {
             text-decoration: none;
             transition-duration: 0.3s;
@@ -116,38 +249,128 @@
             border: none;
         }
 
-        @media screen and (min-width:900px){
+        @media screen and (min-width: 900px) {
             body {
-                margin: 0 8vw;
+                margin: auto;
+                padding: 0 5vw;
+                /* margin: 0 5vw; */
             }
+
             h1 {
-            font-size: 48pt;
-            line-height: 49pt;}
+                font-size: 42pt;
+                line-height: 45pt;
+            }
+
             #mainLogo {
                 width: 42pt;
-                margin-bottom: -32pt;
             }
+
+            header {
+                padding: 0px;
+            }
+
+            .container {
+                margin: 0 0 14px 0;
+                max-height: 450px;
+                flex-direction: row-reverse;
+                align-items: center;
+                justify-content: center;
+                /* gap: 24px; */
+                /* background-color: #FF0036; */
+            }
+
+            .headline-container {
+                flex-grow: 1;
+                padding: 0;
+                margin: 0px 32px 0px 0px;
+            }
+
+            .player-container {
+                width: 100%;
+                flex-grow: 2;
+                height: 70vh;
+                min-height: 400px;
+                max-height: 450px;
+                border: 0pt solid rgba(255, 255, 255, 1);
+                border-radius: 5px;
+                /* background-color: transparent; */
+            }
+
             footer {
                 flex-direction: row;
                 justify-content: space-around;
             }
-            #nailFooter{order: 0;}
-            #copyrightFooter {order: -2;}
-            #lovefromFooter {order: -1;}      
+
+            #nailFooter {
+                order: 0;
+            }
+
+            #copyrightFooter {
+                order: -2;
+            }
+
+            #lovefromFooter {
+                order: -1;
+            }
+        }
+
+        @media screen and (min-width:1100px) {
+            body {
+                padding: 0 8vw;
+                /* margin: 0 8vw; */
+            }
+
+            /* .container {
+                gap: 32px;
+            } */
+
+            h1 {
+                font-size: 48pt;
+                line-height: 49pt;
+            }
+
+            /* .headline-container {
+                margin: 0px 34px 0px 0px;
+            } */
+
+            .player-container {
+                max-width: 700px;
+                /* max-height: 450px; */
+            }
         }
     </style>
 </head>
 
-<body style="background-color: black; color: white; min-width: 250px; min-height: 500px;">
-    <div class="container">
+<body style="background-color: black; color: white; min-width: 320px; min-height: 500px;">
+    <header>
         <svg id="mainLogo" class="box noselect" width="34pt" viewBox="0 0 273 287" fill="none"
             xmlns="http://www.w3.org/2000/svg">
             <path
                 d="M128.782 17.711L229.226 0L241.288 68.4102L222.467 71.729C189.767 77.495 166.545 76.3039 152.792 68.153C141.53 61.4328 134.239 48.6584 130.92 29.8368L128.782 17.711ZM168.937 246.501C164.534 221.526 176.023 202.024 203.406 187.987C213.908 182.655 227.907 178.442 245.404 175.357L259.702 172.836L272.658 246.314L172.033 264.056L168.937 246.501ZM0.105347 40.3998L97.4726 23.2315L114.96 122.409L187.533 109.612L195.862 156.848L123.289 169.644L140.84 269.183L43.4731 286.352L0.105347 40.3998Z"
                 fill="white" />
         </svg>
-        <h1 class="box noselect">studios<br>design<br>productions</h1>
-        <a href="mailto:elias@eliasfuentes.com"><button class="noselect">contact me</button></a>
+        <a id="h-button" class="material-icons hamburger-button">
+            <i class="material-icons noselect">menu</i>
+        </a>
+        <div id="h-menu" class="hamburger-menu">
+            <ul>
+                <li><a href="https://www.eliasfuentes.com/">Home</a></li>
+                <!-- <li><a href="https://www.eliasfuentes.com/">For Artists</a></li> -->
+                <!-- <li><a href="#portfolio">Work</a></li> -->
+                <li><a href="https://www.linkedin.com/in/eliasfuentesc/">LinkedIn</a></li>
+                <li><a href="mailto:elias@eliasfuentes.comt">Contact via Email</a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="container">
+        <div class="player-container">
+            <!-- <i class="material-icons noselect" style="font-size: 48px;">play_arrow</i> -->
+        </div>
+        <div class="headline-container">
+            <h1 class="noselect">studios<br>design<br>productions</h1>
+            <a href="mailto:elias@eliasfuentes.com"><button class="noselect">contact me</button></a>
+        </div>
+        <a class="" href=""></a>
     </div>
 
     <footer>
@@ -155,6 +378,16 @@
         <p id="copyrightFooter" class="noselect">Copyright © 2022 Elias Fuentes.</p>
         <p id="lovefromFooter" class="noselect" style="font-weight: 600;">❤ from Chile</p>
     </footer>
+    <script>
+        var hbutton = document.getElementById('h-button'); // Assumes element with id='button'
+        var hmenu = document.getElementById('h-menu');
+        hbutton.onclick = function () {
+            hmenu.classList.toggle('show');
+        };
+        hmenu.onclick = function () {
+            hmenu.classList.toggle('show');
+        };
+    </script>
 </body>
 
 </html>
